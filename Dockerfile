@@ -12,7 +12,6 @@ ENV PATH=/opt/miniforge/bin:$PATH
 # Install dependencies and Miniforge
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends wget git  && \
-    apt-get remove --purge -y wget && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
