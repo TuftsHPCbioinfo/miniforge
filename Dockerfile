@@ -11,17 +11,16 @@ ENV PATH=/opt/miniforge/bin:$PATH
 
 # Install dependencies and Miniforge
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends \
-        build-essential \
-        wget \
-        git && \
-    wget -q https://github.com/conda-forge/miniforge/releases/download/24.11.0-0/Miniforge3-24.11.0-0-Linux-x86_64.sh && \
-    bash Miniforge3-24.11.0-0-Linux-x86_64.sh -b -p /opt/miniforge && \
-    rm -f Miniforge3-24.11.0-0-Linux-x86_64.sh && \
+    apt-get install -y --no-install-recommends wget git  && \
     apt-get remove --purge -y wget && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+RUN wget -q https://github.com/conda-forge/miniforge/releases/download/24.11.0-0/Miniforge3-24.11.0-0-Linux-x86_64.sh && \
+    bash Miniforge3-24.11.0-0-Linux-x86_64.sh -b -p /opt/miniforge && \
+    rm -f Miniforge3-24.11.0-0-Linux-x86_64.sh && \
+
 
 # Update and clean conda
 RUN conda update -n base conda -y && \
