@@ -24,4 +24,5 @@ scipy
 seaborn
 shapely
 spacy
+statsmodels
 xgboost
