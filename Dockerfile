@@ -19,7 +19,7 @@ RUN apt-get update && apt-get upgrade -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/conda-forge/miniforge/releases/download/24.11.2-1/Miniforge3-24.11.2-1-Linux-x86_64.sh  \
-    && Miniforge3-24.11.2-1-Linux-x86_64.sh  -b -p /opt/miniforge \
+    && bash Miniforge3-24.11.2-1-Linux-x86_64.sh  -b -p /opt/miniforge \
     && rm -f Miniforge3-24.11.2-1-Linux-x86_64.sh  
 
 # Update conda and clean
