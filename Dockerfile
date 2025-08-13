@@ -18,9 +18,9 @@ RUN apt-get update && apt-get upgrade -y \
     && update-locale LANG=en_US.UTF-8 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/conda-forge/miniforge/releases/download/24.11.2-1/Miniforge3-24.11.2-1-Linux-x86_64.sh  \
-    && bash Miniforge3-24.11.2-1-Linux-x86_64.sh  -b -p /opt/miniforge \
-    && rm -f Miniforge3-24.11.2-1-Linux-x86_64.sh  
+RUN wget https://github.com/conda-forge/miniforge/releases/download/25.3.1-0/Miniforge3-25.3.1-0-Linux-x86_64.sh  \
+    && bash Miniforge3-25.3.1-0-Linux-x86_64.sh  -b -p /opt/miniforge \
+    && rm -f Miniforge3-25.3.1-0-Linux-x86_64.sh  
 
 # Update conda and clean
 RUN conda update --all \
